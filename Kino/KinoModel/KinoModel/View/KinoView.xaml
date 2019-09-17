@@ -1,0 +1,87 @@
+﻿<Window x:Class="KinoModel.View.KinoView"
+        x:Name="kinoWindow"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KinoModel"
+        mc:Ignorable="d"
+        Title="KinoView" Height="450" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Column="1" Grid.Row="1" x:Name="lblTitel" Content="Titel"/>
+        <TextBox Grid.Column="3" Grid.Row="1" x:Name="txtTitel" IsReadOnly="True" Text="{Binding Titel}"/>
+
+        <Label Grid.Column="5" Grid.Row="1" x:Name="lblKategorie" Content="Kategorie"/>
+        <TextBox Grid.Column="7" Grid.Row="1" x:Name="txtKategorie" IsReadOnly="True"  Text="{Binding Kategorie,Mode=OneWay}"/>
+
+
+        <Label Grid.Column="1" Grid.Row="3" x:Name="lblDauer" Content="Dauer"/>
+        <TextBox Grid.Column="3" Grid.Row="3" x:Name="txtDauer" IsReadOnly="True"  Text="{Binding Dauer, Mode=OneWay}" />
+
+
+        <Label Grid.Column="1" Grid.Row="5" x:Name="lblEmail" Content="Zeit der Vorstellung"/>
+        <ComboBox Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="4" x:Name="CmbVerfuegbar" ItemsSource="{Binding Verfuegbar}" SelectedIndex="0"   VerticalContentAlignment="Center">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock Margin="0,0,15,0" Text="{Binding Spielzeit}"></TextBlock>
+                        <TextBlock  Margin="0,0,5,0">  Verfuegbare Sitze: </TextBlock>
+                        <TextBlock Text="{Binding AnzfreiePlaetze}"></TextBlock>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+        <Label Grid.Column="5" Grid.Row="3" x:Name="lblAnzahl" Content="Anzahl Tickets"/>
+        <TextBox Grid.Column="7" Grid.Row="3" x:Name="txtAnzahl" Text="{Binding Anzahl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" />
+
+        <Label Grid.Column="1" Grid.Row="7" x:Name="lblPreis" Content="Gesamter Preis"/>
+        <TextBox Grid.Column="3" Grid.Row="7" x:Name="txtPreis" IsReadOnly="True"  Text="{Binding Kosten, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" />
+
+        
+        <TextBlock Grid.Column="3" Grid.Row="9">
+            <Hyperlink  NavigateUri="{Binding Path=Trailer}" RequestNavigate="Hyperlink_RequestNavigate"  >
+                Trailer
+            </Hyperlink>
+        </TextBlock>
+
+
+
+
+        <Button Grid.Column="5" Grid.Row="7" Command="{Binding KaufenCommand}" CommandParameter="{Binding ElementName=kinoWindow}" >Kaufen</Button>
+        <Button Grid.Column="5" Grid.Row="9" IsCancel="True" >Cancel</Button>
+
+
+    </Grid>
+</Window>

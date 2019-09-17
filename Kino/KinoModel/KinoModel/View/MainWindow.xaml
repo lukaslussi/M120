@@ -1,0 +1,97 @@
+﻿<Window x:Class="KinoModel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KinoModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="1"  Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Column="1" Grid.Row="1"  Content="Film Name"/>
+            <TextBox x:Name="tbFilm"  Grid.Column="3" Grid.Row="1" Text="{Binding FilmName}" />
+            <Button x:Name="Suchen" Grid.Column="7" Grid.Row="1"  Content="Suchen" Command="{Binding SuchenCommand}" />
+        </Grid>
+
+
+        
+        <Border Grid.Row="3"  Grid.Column="0"  BorderBrush="#FF656CF1" BorderThickness="1" CornerRadius="8,8,3,3">
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="3"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Content="Gefundene Filme:"/>
+                <DataGrid Grid.Row ="3" Grid.ColumnSpan="3" Name="gridBuchungsliste"   ItemsSource="{Binding CurrentFilm}"  CanUserAddRows="false" SelectionMode="Single" IsReadOnly="True"
+               Foreground="Black"  GridLinesVisibility="None" BorderThickness="0" RowHeaderWidth="0"
+                          AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Titel"  Binding="{Binding Title}"  />
+                        <DataGridTextColumn Header="Kategprie"  Binding="{Binding Categorie.Desc}" />
+                        <DataGridTextColumn Header="Spieldauer" Binding="{Binding Dauer}"  />
+                        <DataGridTextColumn Header="Zeitangaben aktueller Vorstellungen" Binding="{Binding Spielzeiten}"   />
+
+                        
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </Grid>
+
+
+        </Border>
+        
+
+        <Grid Grid.Row="5"  HorizontalAlignment="Right" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1"  x:Name="btBestellung" Content="Bestellung..."  Width="80" Command="{Binding BestellenCommand }" CommandParameter="{Binding ElementName=gridBuchungsliste, Path=SelectedItem}" />
+
+
+        </Grid>
+    </Grid>
+</Window>

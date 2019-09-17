@@ -1,0 +1,17 @@
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel.csprojAssemblyReference.cache
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\View\KinoView.g.cs
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\View\MainWindow.g.cs
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\App.g.cs
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel_MarkupCompile.cache
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel_MarkupCompile.lref
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\bin\Debug\KinoModel.exe.config
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\bin\Debug\KinoModel.exe
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\bin\Debug\KinoModel.pdb
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\View\KinoView.baml
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\View\MainWindow.baml
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel.g.resources
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel.Properties.Resources.resources
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel.csproj.GenerateResource.cache
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel.csproj.CoreCompileInputs.cache
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel.exe
+C:\Users\lussil\Desktop\GIBZ Moduls\M120\Kino\KinoModel\KinoModel\obj\Debug\KinoModel.pdb
